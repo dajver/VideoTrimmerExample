@@ -131,7 +131,6 @@ class VideoTrimmer(private val context: Context, private val srcPath: File, priv
             fc.close()
             fos.close()
 
-            Thread.sleep((1000).toLong())
             callback.onTrimEnds(createdFile, actualRange!!)
         } catch (e: OutOfMemoryError) {
             callback.onTrimError(java.lang.Exception(e.localizedMessage))
